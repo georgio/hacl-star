@@ -49,6 +49,8 @@ RUN git clone https://github.com/FStarLang/kremlin.git
 WORKDIR /home/Work/kremlin
 RUN git checkout ${kremlinv}
 ENV PATH "~/kremlin:$PATH"
+RUN git clone https://gitlab.inria.fr/fpottier/visitors.git
+RUN cd visitors
 RUN opam config exec -- make
 WORKDIR /home/Work
 
